@@ -10,13 +10,14 @@ public class PageObjectSample {
 
     private final WebDriver driver;
     private WebDriverWait wait;
-    @FindBy(xpath = "//form[@name='login']/div[@class='formRow']/input[@name='j_username']")
+
+    @FindBy(name = "j_username")
     private WebElement jUsername;
 
-    @FindBy(xpath = "//form[@name='login']/div[@class='formRow']/input[@name='j_password']")
+    @FindBy(name = "j_password")
     private WebElement jPassword;
 
-    @FindBy(xpath = "//form[@name='login']/div[@class='submit formRow']/input[@type='submit']")
+    @FindBy(name = "Submit")
     private WebElement signInButton;
 
     @FindBy(linkText = "Manage Jenkins")
@@ -31,22 +32,22 @@ public class PageObjectSample {
     @FindBy(linkText = "Create User")
     private WebElement createUserLink;
 
-    @FindBy(xpath = "//div[@id='main-panel']/form/div/table/tbody/tr/td/input[@type='text' and @name='username']")
+    @FindBy(name = "username")
     private WebElement newUserName;
 
-    @FindBy(xpath = "//div[@id='main-panel']/form/div/table/tbody/tr/td/input[@type='password' and @name='password1']")
+    @FindBy(name = "password1")
     private WebElement newPassword;
 
-    @FindBy(xpath = "//div[@id='main-panel']/form/div/table/tbody/tr/td/input[@type='password' and @name='password2']")
+    @FindBy(name = "password2")
     private WebElement confirmNewPassword;
 
-    @FindBy(xpath = "//div[@id='main-panel']/form/div/table/tbody/tr/td/input[@type='text' and @name='fullname']")
+    @FindBy(name = "fullname")
     private WebElement fullName;
 
-    @FindBy(xpath = "//div[@id='main-panel']/form/div/table/tbody/tr/td/input[@type='text' and @name='email']")
+    @FindBy(name = "email")
     private WebElement email;
 
-    @FindBy(xpath = "//div[@id='main-panel']/form/span[@id='yui-gen1']/span[@class='first-child']/button[@type='button' and @id='yui-gen1-button']")
+    @FindBy(id = "yui-gen1-button")
     private WebElement createNewUserButton;
 
     @FindBy(xpath = "//table[@id='people']/tbody/tr/td/a[contains( text(), 'someuser' )]")
@@ -55,11 +56,11 @@ public class PageObjectSample {
     @FindBy(xpath = "//table[@id='people']/tbody/tr/td/a[@href='user/someuser/delete']")
     private WebElement deleteSomeUserLink;
 
-    @FindBy(xpath = "//div[@id='main-panel']/form[@name='delete']")
+    @FindBy(name = "delete")
     private WebElement deleteSomeUserForm;
 
-    @FindBy(xpath = "//span[@id='yui-gen1']/span[@class='first-child']/button[@id='yui-gen1-button']")
-    private WebElement confirmSomeUserDelition;
+    @FindBy(id = "yui-gen1-button")
+    private WebElement confirmSomeUserDeletion;
 
     @FindBy(xpath = "//a[@href='user/admin/delete']")
     private WebElement userAdminDeleteLink;
@@ -196,7 +197,7 @@ public class PageObjectSample {
     }
 
     public PageObjectSample confirmSomeUserDelition() {
-        confirmSomeUserDelition.click();
+        confirmSomeUserDeletion.click();
         return this;
     }
     //---------------Actions

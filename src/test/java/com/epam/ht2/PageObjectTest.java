@@ -12,14 +12,16 @@ import java.util.concurrent.TimeUnit;
 
 public class PageObjectTest {
     private static final String BASE_URL = "http://localhost:8080";
-    private static final String WEBDRIVER_LOCAL_URL = "C://Program Files (x86)//Google//chromedriver.exe";
+    private static final String WEB_DRIVER = "webdriver.chrome.driver";
+    private static final String WEB_DRIVER_LOCAL_URL = "C://Program Files (x86)//Google//chromedriver.exe";
     private WebDriver driver = null;
     private boolean elementFound;
+
     private String expected;
 
     @BeforeClass
     public void beforeClass() {
-        System.setProperty("webdriver.chrome.driver", WEBDRIVER_LOCAL_URL);
+        System.setProperty(WEB_DRIVER, WEB_DRIVER_LOCAL_URL);
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         driver.get(BASE_URL);
