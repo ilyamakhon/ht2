@@ -36,7 +36,7 @@ public class PageObjectTest {
     }
 
     @Test
-    public void jenkinsLocalTest() throws InterruptedException {
+    public void jenkinsLocalTest() {
         PageObjectSample page = PageFactory.initElements(driver, PageObjectSample.class);
 
         //1-step: authorization
